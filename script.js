@@ -13,7 +13,8 @@ const transcode = async ({ target: { files }  }) => {
   message.innerHTML = 'Loading ffmpeg-core.js';
   await ffmpeg.load();
   message.innerHTML = 'Start transcoding';
-  await ffmpeg.FS('writeFile', name, files[0]);
+  // await ffmpeg.FS('writeFile', name, files[0]);
+  ffmpeg.FS('writeFile', name, await fetchFile(files[0]));
   var codec = document.getElementById("codec");
   codec.output = codec.value.startsWith('h') ? 'mp4':'mp3';
   var output = "output."+codec.output;

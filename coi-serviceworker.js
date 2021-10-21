@@ -32,6 +32,7 @@ if (typeof window === 'undefined') {
                     newHeaders.set("Cross-Origin-Embedder-Policy", "require-corp");
                     newHeaders.set("Cross-Origin-Opener-Policy", "same-origin");
                     newHeaders.set("Cross-Origin-Resource-Policy", "cross-origin");
+                    newHeaders.set("Access-Control-Allow-Origin:", "*");
 
                     return new Response(response.body, {
                         status: response.status,

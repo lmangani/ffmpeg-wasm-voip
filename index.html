@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>CodePen - ffmpeg.wasm transcode Example</title>
   <link rel="stylesheet" href="./style.css">
-  <script src="coi-serviceworker.js"></script>
+  
 </head>
 <body>
 <!-- partial:index.partial.html -->
@@ -15,12 +15,12 @@
 <br/>
 <select id="codec">
   <option value="mulaw" output="mp3" selected="selected">g711u</option>
-  <option value="alaw"  output="mp3">g711a</option>
-  <option value="g722"  output="mp3">g722</option>
-  <option value="g726"  output="mp3">g726</option>
-  <option value="g729"   output="mp3">g729</option>
-  <option value="opus"   output="mp3">opus</option>
-  <option value="gsm"    output="mp3">gsm</option>
+  <option value="alaw" output="mp3">g711a</option>
+  <option value="g722" output="mp3">g722</option>
+  <option value="g726" output="mp3">g726</option>
+  <option value="g729" output="mp3">g729</option>
+  <option value="opus" output="mp3">opus</option>
+  <option value="gsm" output="mp3">gsm</option>
   <option value="amr_nb" output="mp3">AMR NB</option>
   <option value="amr_wb" output="mp3">AMR WB</option>
   <option value="h261" output="mp4">h261</option>
@@ -34,7 +34,7 @@
 To export from Wireshark, select an RTP stream > stream analysis.<br/> Click Save and select unsynchronized forward stream audio.<br/> Then when it asks for a file, select type Raw
 </d>
 <!-- partial -->
+  <script src="./coi-serviceworker.js"></script>
   <script src='https://unpkg.com/@ffmpeg/ffmpeg@0.8.1/dist/ffmpeg.min.js'></script><script  src="./script.js"></script>
-
 </body>
 </html>

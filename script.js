@@ -22,7 +22,7 @@ const transcode = async ({ target: { files }  }) => {
   var cmd = ['', '-i', name, '-f', codec.value, '-ar 8000', output]
   await ffmpeg.run(cmd.join(' '));
   message.innerHTML = 'Complete transcoding';
-  const data = ffmpeg.FS('readFile', output);
+  const data = await ffmpeg.FS('readFile', output);
   const audio = document.getElementById('output-audio');
   audio.src = URL.createObjectURL(new Blob([data.buffer], { type: 'audio/mpeg' }));
     

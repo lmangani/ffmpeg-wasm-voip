@@ -12,7 +12,9 @@ const transcode = async ({ target: { files }  }) => {
   try {
   const { name } = files[0];
   message.innerHTML = 'Loading ffmpeg-core.js';
-  await ffmpeg.load();
+  if (!ffmpeg.isLoaded()) {
+    await ffmpeg.load();
+  }
   message.innerHTML = 'Start transcoding';
   // await ffmpeg.FS('writeFile', name, files[0]);
   ffmpeg.FS('writeFile', name, await fetchFile(files[0]));

@@ -31,8 +31,7 @@ if (typeof window === 'undefined') {
                     const newHeaders = new Headers(response.headers);
                     newHeaders.set("Cross-Origin-Embedder-Policy", "require-corp");
                     newHeaders.set("Cross-Origin-Opener-Policy", "same-origin");
-                    newHeaders.set("Cross-Origin-Resource-Policy", "cross-origin");
-                    newHeaders.set("Access-Control-Allow-Origin:", "*");
+                    newHeaders.set("Cross-Origin-Resource-Policy", "*");
 
                     return new Response(response.body, {
                         status: response.status,

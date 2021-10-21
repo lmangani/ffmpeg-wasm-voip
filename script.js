@@ -1,4 +1,11 @@
 const message = document.getElementById('message');
+
+if (!self.crossOriginIsolated){
+  message.innerHTML = 'COOP/COEP Error! Execution blocked.';
+} else {
+  message.innerHTML = 'Ready!';
+}
+
 const { createFFmpeg, fetchFile } = FFmpeg;
 const ffmpeg = createFFmpeg({
   log: true,

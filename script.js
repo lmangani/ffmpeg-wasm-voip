@@ -28,7 +28,7 @@ const transcode = async ({ target: { files }  }) => {
   var codec = document.getElementById("codec") || 'g';
   codec.output = codec.value.startsWith('h') ? 'mp4':'mp3';
   var output = "output."+codec.output;
-  await ffmpeg.run('-err_detect', 'ignore_err', '-i', name, ' -f', codec.value, output);
+  await ffmpeg.run('-err_detect', 'ignore_err', ' -f', codec.value, '-i', name, output);
   message.innerHTML = 'Complete transcoding';
   const data = ffmpeg.FS('readFile', output);
   const audio = document.getElementById('output-audio');
